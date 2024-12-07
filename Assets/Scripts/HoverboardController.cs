@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
 
-//https://www.youtube.com/watch?v=XF4HzViMSRk&ab_channel=BlumStudios
+////https://www.youtube.com/watch?v=XF4HzViMSRk&ab_channel=BlumStudios
+///I used chat GPT to for controlling board in air
 public class HoverboardController : MonoBehaviour
 {
     [SerializeField]
@@ -11,9 +12,10 @@ public class HoverboardController : MonoBehaviour
     public InputAction PlayerControls;
 
     Rigidbody hb;
-    public float mult;
     public float moveForce;
     public float turnTorque;
+    public float groundCheckDistance = 0.5f; // Distance to check for the ground below
+    public LayerMask groundLayer; // Layer that represents the ground
 
     Vector3 moveDir = Vector3.zero;
 
@@ -32,29 +34,27 @@ public class HoverboardController : MonoBehaviour
         hb = GetComponent<Rigidbody>();
     }
 
-    public Transform[] anchors = new Transform[4];
-    public RaycastHit[] hits = new RaycastHit[4];
+    public Transform[] anchors = new Transform[4]; // Anchors used for ground checking
 
     void FixedUpdate()
     {
-        for (int i = 0; i < 4; i++)
-            ApplyF(anchors[i], hits[i]);
-
         Vector2 inputVector = PlayerControls.ReadValue<Vector2>();
-
-        hb.AddForce(inputVector.x * moveForce * transform.forward);
         hb.AddTorque(inputVector.y * turnTorque * transform.up);
-
-    }
-
-    void ApplyF(Transform anchor, RaycastHit hit)
-    {
-        if (Physics.Raycast(anchor.position, -anchor.up, out hit))
+        if (IsOnGround())
         {
-            float force = 0;
-            force = Mathf.Abs(1 / (hit.point.y - anchor.position.y));
-            hb.AddForceAtPosition(transform.up * force * mult, anchor.position, ForceMode.Acceleration);
+            hb.AddForce(inputVector.x * moveForce * transform.forward);
         }
     }
 
+    bool IsOnGround()
+    {
+        foreach (Transform anchor in anchors)
+        {
+            if (Physics.Raycast(anchor.position, Vector3.down, groundCheckDistance, groundLayer))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }
