@@ -45,7 +45,7 @@ public class HoverboardController : MonoBehaviour
     private float rotationStore = 0f;
 
     // Threshold for recognizing a 180-degree rotation while airborne (50% of 360).
-    private const float fullRotation = 360f * 0.5f; 
+    private const float fullRotation = 360f * 0.5f;
 
     void OnEnable()
     {
@@ -100,7 +100,6 @@ public class HoverboardController : MonoBehaviour
         }
         return false;
     }
-   
     private void CheckAndResetRotation()
     {
         if (rotationStore >= fullRotation)

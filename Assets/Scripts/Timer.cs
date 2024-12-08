@@ -11,9 +11,9 @@ public class Timer : MonoBehaviour
     [SerializeField] float remainingTime;
 
     // Update is called once per frame
-     void Update()
+    void Update()
     {
-        if(remainingTime > 0)
+        if (remainingTime > 0)
         {
             remainingTime -= Time.deltaTime;
         }
