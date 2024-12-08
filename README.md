@@ -22,7 +22,7 @@ Can you score the highest while evading the avalanche and navigating through the
 - A fog covers your way, be careful while you navigating between the pillars.
 
 ## How To Play
-To slide fester press the up arrow.
+To slide down faster press the up arrow.
 
 To turn right use the right arrow, and turn left with the left arrow.
 
