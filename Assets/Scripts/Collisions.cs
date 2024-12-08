@@ -1,13 +1,25 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+/**
+ * Manages the player's collisions with various objects in the game.
+ * Handles scoring, level transitions, and player destruction.
+ */
 public class Collisions : MonoBehaviour
 {
+    [SerializeField]
+    [Tooltip("Tag for objects.")]
+    private string space;
 
-    [SerializeField] string space;
-    [SerializeField] string finish;
-    [SerializeField] string avalanche;
-    [SerializeField] string triggerAvalanche;
+    [SerializeField]
+    [Tooltip("Tag for objects.")]
+    private string finish;
 
+    [SerializeField]
+    [Tooltip("Tag for objects.")]
+    private string avalanche;
+
+    // Called when another collider enters the trigger collider attached to this object
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == space && enabled)

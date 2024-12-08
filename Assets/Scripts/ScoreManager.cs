@@ -2,11 +2,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /**
+ * Displays score in the scene
  * I learned from here: https://www.youtube.com/watch?v=YUcvy9PHeXs&t=210s&ab_channel=CocoCode
- * Did the same thing in the lasr assignment
+ * Did the same thing in the last assignment.
  */
 
-/// Manages the game's scoring system, including the display of scores and player health.
+/// Manages the game's scoring system.
 public class ScoreManager : MonoBehaviour
 {
     /// Singleton instance of the ScoreManager.

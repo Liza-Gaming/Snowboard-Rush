@@ -11,7 +11,7 @@ public class SphereManager : MonoBehaviour
     {
         if (other.CompareTag("Player")) // Assuming the player has the tag "Player"
         {
-            // Call the method to activate the avalanche
+            // Activate the avalanche
             StartAvalanche();
         }
     }

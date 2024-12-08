@@ -2,7 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-//https://www.youtube.com/watch?v=POq1i8FyRyQ&ab_channel=RehopeGames
+/**
+ * I learned from this video: https://www.youtube.com/watch?v=POq1i8FyRyQ&ab_channel=RehopeGames
+ */
 public class Timer : MonoBehaviour
 {
     [SerializeField] Text timerText;
@@ -15,7 +17,7 @@ public class Timer : MonoBehaviour
         {
             remainingTime -= Time.deltaTime;
         }
-        if (remainingTime < 0)
+        if (remainingTime <= 0)
         {
             ResetLevel();
         }
@@ -24,6 +26,8 @@ public class Timer : MonoBehaviour
         timerText.text = string.Format("{0:00}:{1:00}", minutes, second);
 
     }
+
+    // Restart the scene
     private void ResetLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
