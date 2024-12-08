@@ -6,18 +6,25 @@ public class SphereManager : MonoBehaviour
     public GameObject[] spheres; // Array to hold sphere game objects
     public float delay = 10f;    // Delay before activating spheres
 
-    void Start()
+
+    private void OnTriggerEnter(Collider other)
     {
-        // Start a coroutine that waits and then activates the spheres
+        if (other.CompareTag("Player")) // Assuming the player has the tag "Player"
+        {
+            // Call the method to activate the avalanche
+            StartAvalanche();
+        }
+    }
+
+    public void StartAvalanche()
+    {
         StartCoroutine(ActivateSpheresAfterDelay());
     }
 
     private IEnumerator ActivateSpheresAfterDelay()
     {
-        // Wait for the specified duration (10 seconds here)
-        yield return new WaitForSeconds(delay);
-
-        // Loop through each sphere in the array and activate it
+        yield return new WaitForSeconds(0);
+        // Immediate or delayed sphere activation logic can be customized here
         foreach (GameObject sphere in spheres)
         {
             sphere.SetActive(true);

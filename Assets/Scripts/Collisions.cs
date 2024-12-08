@@ -2,10 +2,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Collisions : MonoBehaviour
 {
-    
+
     [SerializeField] string space;
     [SerializeField] string finish;
     [SerializeField] string avalanche;
+    [SerializeField] string triggerAvalanche;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,10 +20,11 @@ public class Collisions : MonoBehaviour
             SceneManager.LoadScene(1);
             Destroy(other.gameObject);
         }
-        if (other.tag == avalanche && enabled)
+        if (other.tag == avalanche)
         {
+            Destroy(gameObject);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            Destroy(this.gameObject);
+
         }
     }
 }
