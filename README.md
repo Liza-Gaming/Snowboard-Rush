@@ -11,6 +11,8 @@ Each course is a test of agility and precision, demanding perfect timing and ski
 
 Can you score the highest while evading the avalanche and navigating through the paths? Grab your snowboard, hit the slopes, and prove that you have what it takes to be the king of the mountain!
 
+[Play the game in Itch.io](https://lizachep.itch.io/ski)
+
 ## Physics
 - A variety of physics materials: Snow, Ice, Rubber pillars and Big snow balls.
 - Controll a snowboard sliding down the slope - sliding on the slippery ice and jamping from ramp. But be aware: you have less control while you are in the air.
