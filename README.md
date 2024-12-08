@@ -27,7 +27,8 @@ To slide down faster press the up arrow.
 To turn right use the right arrow, and turn left with the left arrow.
 
   ## Screenshot
+  
+https://github.com/user-attachments/assets/7c7fddfa-5b05-4f2b-803d-bd7f501988de
 
-https://github.com/user-attachments/assets/00196eb7-fe9c-4c8c-9313-bc3766b8e4f4
 
  
