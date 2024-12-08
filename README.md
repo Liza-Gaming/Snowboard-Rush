@@ -21,6 +21,11 @@ Can you score the highest while evading the avalanche and navigating through the
 - Avoid the avalanche balls that are coming down the slope after you!
 - A fog covers your way, be careful while you navigating between the pillars.
 
+## How To Play
+To slide fester press the up arrow.
+
+To turn right use the right arrow, and turn left with the left arrow.
+
   ## Screenshot
 
 https://github.com/user-attachments/assets/00196eb7-fe9c-4c8c-9313-bc3766b8e4f4
